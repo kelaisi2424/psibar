@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSI to Bar Converter — Instant Pressure Unit Calculator</title>
+    <meta name="description" content="Convert pressure units instantly with our free online pressure converter. Includes conversion chart for tire pressure (30-42 PSI), formula, FAQ and common values.">
+    <meta name="keywords" content="psi to bar, convert psi to bar, psi to bar converter, pressure converter, tire pressure psi to bar, bar to psi, psi to bar chart, psi to bar conversion table">
+    <link rel="canonical" href="https://psibar.co/">
+    <meta property="og:title" content="PSI to Bar Converter — Instant Pressure Calculator">
+    <meta property="og:description" content="Convert PSI to Bar instantly. Free pressure converter with chart, formula and tire pressure guide.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://psibar.co/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PSI to Bar Converter — Instant Pressure Calculator">
+    <meta name="twitter:description" content="Convert PSI to Bar instantly. Free pressure converter with chart, formula and tire pressure guide.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do you convert PSI to Bar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To convert PSI to Bar, multiply the PSI value by 0.0689476. For example, 35 PSI × 0.0689476 = 2.413 Bar."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is 32 PSI in Bar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "32 PSI is equal to 2.206 Bar. This is a common tire pressure for many passenger vehicles."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between PSI and Bar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PSI (Pounds per Square Inch) is used primarily in the US and UK. Bar is used in most other countries and in the metric system. 1 Bar equals approximately 14.5038 PSI."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is normal tire pressure in Bar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Normal passenger car tire pressure is typically 2.0 to 2.5 Bar (29 to 36 PSI). Always check the recommended pressure on your vehicle door jamb sticker."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is 2.5 Bar the same as 36 PSI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "2.5 Bar equals approximately 36.26 PSI. So 2.5 Bar is very close to 36 PSI and they are often used interchangeably for tire pressure."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many PSI is 1 Bar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "1 Bar is equal to 14.5038 PSI. To convert Bar to PSI, multiply the Bar value by 14.5038."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #0a0f1c;
+            --surface: #131a2e;
+            --surface-hover: #1a2340;
+            --accent: #00d4aa;
+            --accent-glow: rgba(0, 212, 170, 0.15);
+            --accent-dim: #00a888;
+            --text: #e8ecf4;
+            --text-dim: #7a8ba8;
+            --text-muted: #4a5a75;
+            --border: #1e2a45;
+            --input-bg: #0d1425;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .logo { font-family: 'Space Mono', monospace; font-size: 14px; color: var(--accent); letter-spacing: 2px; text-decoration: none; }
+        .live-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; display: inline-block; margin-right: 6px; animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .live-label { font-size: 11px; color: var(--text-dim); letter-spacing: 1px; }
+
+        main { max-width: 680px; margin: 0 auto; padding: 20px 24px 60px; }
+
+        h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.15; margin-bottom: 8px; letter-spacing: -0.5px; }
+        h1 .hl { color: var(--accent); }
+        .subtitle { color: var(--text-dim); font-size: 15px; margin-bottom: 40px; }
+
+        h2 { font-size: 22px; font-weight: 700; margin: 48px 0 16px; color: var(--text); }
+        h3 { font-size: 17px; font-weight: 600; margin: 24px 0 8px; color: var(--text); }
+
+        p, li { color: var(--text-dim); font-size: 15px; margin-bottom: 12px; }
+        ul { padding-left: 20px; margin-bottom: 16px; }
+
+        .converter-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px 28px;
+            position: relative;
+            overflow: hidden;
+        }
+        .converter-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); }
+
+        .input-group { margin-bottom: 24px; }
+        .input-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim); margin-bottom: 8px; display: block; }
+        .input-wrapper { display: flex; align-items: center; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 12px; padding: 0 16px; transition: border-color 0.2s; }
+        .input-wrapper:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+        .input-wrapper input { flex: 1; background: none; border: none; outline: none; color: var(--text); font-family: 'Space Mono', monospace; font-size: 28px; font-weight: 700; padding: 16px 0; width: 100%; }
+        .input-wrapper input::placeholder { color: var(--text-muted); }
+        .unit-badge { font-family: 'Space Mono', monospace; font-size: 14px; font-weight: 700; color: var(--text-dim); background: var(--surface); padding: 6px 12px; border-radius: 8px; white-space: nowrap; }
+
+        .swap-row { display: flex; justify-content: center; margin: -8px 0; position: relative; z-index: 2; }
+        .swap-btn { width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 2px solid var(--border); color: var(--accent); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; font-size: 18px; }
+        .swap-btn:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); transform: rotate(180deg); }
+
+        .result-group { margin-top: 24px; }
+        .result-wrapper { display: flex; align-items: center; background: var(--accent-glow); border: 1.5px solid rgba(0,212,170,0.25); border-radius: 12px; padding: 16px; }
+        .result-value { flex: 1; font-family: 'Space Mono', monospace; font-size: 28px; font-weight: 700; color: var(--accent); }
+        .copy-btn { background: rgba(0,212,170,0.15); border: 1px solid rgba(0,212,170,0.3); color: var(--accent); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.2s; white-space: nowrap; }
+        .copy-btn:hover { background: var(--accent); color: var(--bg); }
+        .copy-btn.copied { background: var(--accent); color: var(--bg); }
+        .formula { font-family: 'Space Mono', monospace; font-size: 13px; color: var(--text-muted); margin-top: 16px; text-align: center; }
+        .formula span { color: var(--accent); }
+
+        .quick-section { margin-top: 48px; }
+        .quick-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; margin-top: 16px; }
+        .quick-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px; cursor: pointer; transition: all 0.15s; text-align: center; }
+        .quick-item:hover { border-color: var(--accent); background: var(--surface-hover); transform: translateY(-1px); }
+        .quick-psi { display: block; font-family: 'Space Mono', monospace; font-size: 15px; font-weight: 700; color: var(--text); }
+        .quick-bar { display: block; font-size: 13px; color: var(--accent); margin-top: 4px; }
+
+        .table-section { margin-top: 48px; }
+        .conv-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        .conv-table th { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); padding: 12px 16px; text-align: left; border-bottom: 2px solid var(--border); }
+        .conv-table td { padding: 10px 16px; border-bottom: 1px solid var(--border); font-family: 'Space Mono', monospace; font-size: 14px; color: var(--text-dim); }
+        .conv-table tr:hover td { color: var(--accent); background: var(--accent-glow); }
+
+        .content-section { margin-top: 48px; }
+        .content-section p { line-height: 1.8; }
+
+        .faq-section { margin-top: 48px; }
+        .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; }
+        .faq-q { font-size: 16px; font-weight: 600; color: var(--text); margin: 0 0 8px 0; }
+        .faq-a { color: var(--text-dim); font-size: 15px; margin: 0; }
+
+        footer { max-width: 680px; margin: 0 auto; padding: 40px 24px; text-align: center; border-top: 1px solid var(--border); }
+        footer p { font-size: 13px; color: var(--text-muted); }
+        footer a { color: var(--text-dim); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+
+        .fab { position: fixed; bottom: 24px; right: 24px; width: 52px; height: 52px; background: var(--accent); color: var(--bg); border: none; border-radius: 50%; cursor: pointer; font-size: 22px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,212,170,0.4); transition: transform 0.2s; z-index: 99; }
+        .fab:hover { transform: scale(1.1); }
+
+        @media (max-width: 480px) {
+            main { padding: 16px 16px 40px; }
+            .converter-card { padding: 24px 20px; }
+            .input-wrapper input { font-size: 22px; }
+            .result-value { font-size: 22px; }
+            .quick-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="/" class="logo">PSI⇄BAR</a>
+    <div><span class="live-dot"></span><span class="live-label">CONVERTER</span></div>
+</header>
+
+<main>
+    <h1><span class="hl">PSI to Bar</span> Converter</h1>
+    <p class="subtitle">Free online pressure unit converter — accurate, fast and mobile-friendly</p>
+
+    <div class="converter-card" id="converter">
+        <div class="input-group">
+            <label class="input-label" for="psiInput" id="fromLabel">PSI (Pounds per Square Inch)</label>
+            <div class="input-wrapper">
+                <input type="number" id="psiInput" placeholder="Enter value" step="any" autofocus aria-label="Enter PSI value">
+                <span class="unit-badge" id="fromBadge">PSI</span>
+            </div>
+        </div>
+        <div class="swap-row">
+            <button class="swap-btn" id="swapBtn" aria-label="Swap PSI and Bar" title="Switch to Bar to PSI">⇅</button>
+        </div>
+        <div class="result-group">
+            <label class="input-label" id="toLabel">Bar (Metric Pressure Unit)</label>
+            <div class="result-wrapper">
+                <span class="result-value" id="resultValue">0</span>
+                <button class="copy-btn" id="copyBtn" title="Copy result">📋 Copy</button>
+            </div>
+        </div>
+        <div class="formula" id="formulaDisplay"><span>0</span> PSI × 0.0689476 = <span>0</span> Bar</div>
+    </div>
+
+    <div class="quick-section">
+        <h2>Common PSI to Bar Values</h2>
+        <p>Click any value below to convert PSI to Bar instantly. These are the most frequently searched pressure conversions, including all standard tire pressure values from 30 PSI to 42 PSI.</p>
+        <div class="quick-grid" id="quickGrid"></div>
+    </div>
+
+    <div class="table-section">
+        <h2>PSI to Bar Conversion Chart</h2>
+        <p>Complete PSI to Bar conversion table covering values from 1 PSI to 3000 PSI. This chart is useful for tire pressure, hydraulic systems, HVAC and industrial applications where you need to convert between PSI and Bar quickly.</p>
+        <table class="conv-table">
+            <thead><tr><th>PSI</th><th>Bar</th><th>PSI</th><th>Bar</th></tr></thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+    <div class="content-section">
+        <h2>How to Convert PSI to Bar</h2>
+        <p>Converting PSI to Bar is simple. The conversion factor is 1 PSI = 0.0689476 Bar. To convert any PSI value to Bar, multiply the pressure in PSI by 0.0689476. For example, to convert 35 PSI to Bar, the calculation is 35 × 0.0689476 = 2.4132 Bar.</p>
+        <p>The reverse conversion from Bar to PSI uses the factor 1 Bar = 14.5038 PSI. Multiply any Bar value by 14.5038 to get the equivalent pressure in PSI. Our converter handles both directions with a single click of the swap button.</p>
+
+        <h2>The PSI to Bar Conversion Formula</h2>
+        <p>The exact mathematical formula to convert PSI to Bar is:</p>
+        <p><strong>Bar = PSI × 0.0689476</strong></p>
+        <p>And to convert Bar to PSI:</p>
+        <p><strong>PSI = Bar × 14.5038</strong></p>
+        <p>These conversion factors are derived from the definition of the two pressure units. One pound per square inch (PSI) equals 6894.76 Pascals, while one Bar equals 100,000 Pascals. Dividing 6894.76 by 100,000 gives the conversion factor 0.0689476.</p>
+
+        <h2>Tire Pressure: PSI vs Bar Explained</h2>
+        <p>In the United States, tire pressure is measured in PSI (pounds per square inch). Most US vehicles have a sticker on the driver's door jamb showing the recommended tire pressure in PSI, typically between 30 and 36 PSI for passenger cars.</p>
+        <p>In Europe, Asia and most other regions, tire pressure is measured in Bar. If you drive a European vehicle or use a European tire pressure gauge, you will see Bar values instead of PSI. Common passenger car tire pressures range from 2.0 Bar to 2.5 Bar.</p>
+        <p>Knowing how to convert PSI to Bar is essential when traveling internationally, using imported vehicles, or working with tire equipment that displays a different unit than what you are accustomed to.</p>
+
+        <h3>Common Tire Pressure Values</h3>
+        <ul>
+            <li><strong>30 PSI</strong> = 2.069 Bar — Economy cars, light load</li>
+            <li><strong>32 PSI</strong> = 2.206 Bar — Standard passenger vehicles</li>
+            <li><strong>35 PSI</strong> = 2.413 Bar — Most common recommended pressure</li>
+            <li><strong>36 PSI</strong> = 2.482 Bar — Sedans and small SUVs</li>
+            <li><strong>40 PSI</strong> = 2.758 Bar — Larger vehicles, heavy loads</li>
+            <li><strong>42 PSI</strong> = 2.896 Bar — SUVs and light trucks</li>
+        </ul>
+
+        <h2>Who Uses PSI to Bar Conversion?</h2>
+        <p>The PSI to Bar converter is used by a wide range of people in their daily work and life. Understanding who needs this conversion helps explain why it remains one of the most searched unit conversions on the internet.</p>
+
+        <h3>Car Owners and Drivers</h3>
+        <p>Millions of drivers worldwide need to convert PSI to Bar regularly. American drivers traveling in Europe encounter Bar-based tire gauges. European drivers with US-specification vehicles see PSI on their door jamb stickers. Checking and maintaining correct tire pressure requires accurate unit conversion to avoid under-inflation or over-inflation, both of which affect fuel economy, tire wear, and safety.</p>
+
+        <h3>Cyclists and Bicycle Riders</h3>
+        <p>Road cyclists and mountain bikers frequently encounter both PSI and Bar on tire sidewalls and pump gauges. Many high-end bicycle pumps display both units, but cheaper pumps may show only one. Road bike tires typically require 80-130 PSI (5.5-9.0 Bar), while mountain bike tires run at 25-50 PSI (1.7-3.4 Bar). Accurate accurate conversion ensures optimal performance and prevents pinch flats or blowouts.</p>
+
+        <h3>HVAC and AC Technicians</h3>
+        <p>Heating, ventilation, and air conditioning technicians work with refrigerant pressures that may be specified in PSI or Bar depending on the equipment manufacturer and regional standards. Converting PSI to Bar accurately is critical for proper system charging and diagnosis.</p>
+
+        <h3>Scuba Divers</h3>
+        <p>Scuba diving equipment uses both PSI and Bar for tank pressure readings. US-made regulators and gauges typically display PSI, while European equipment shows Bar. A standard aluminum 80 tank is rated at 3000 PSI (207 Bar). Divers must convert between units to plan dives safely and manage air consumption.</p>
+
+        <h3>Industrial and Engineering Applications</h3>
+        <p>Hydraulic systems, pneumatic tools, pressure vessels, and industrial machinery specifications may use either PSI or Bar. Engineers and technicians working with international equipment or global supply chains need reliable pressure conversion for specifications, safety limits, and quality control.</p>
+
+        <h2>Bar to PSI Conversion</h2>
+        <p>Looking to convert Bar to PSI instead? Use the swap button above to switch the conversion direction. The formula for Bar to PSI is simply: multiply the Bar value by 14.5038 to get PSI. For example, 2.5 Bar × 14.5038 = 36.26 PSI.</p>
+        <p>Common Bar to PSI conversions include 1 Bar = 14.50 PSI, 1.5 Bar = 21.76 PSI, 2.0 Bar = 29.01 PSI, 2.5 Bar = 36.26 PSI, and 3.0 Bar = 43.51 PSI.</p>
+
+        <h2>Why Use Our PSI to Bar Converter?</h2>
+        <p>Our free online pressure converter offers several advantages over manual calculation or other tools. It converts in real time as you type, supports both conversion directions with one-click swap, includes a copy button for quick sharing, displays the full conversion formula for verification, and provides a comprehensive conversion chart with 50 reference values covering everything from low-pressure bicycle tires to high-pressure industrial systems at 3000 PSI.</p>
+    </div>
+
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3 class="faq-q">How do you convert PSI to Bar?</h3>
+            <p class="faq-a">Multiply the PSI value by 0.0689476. For example, 35 PSI × 0.0689476 = 2.413 Bar. You can also use our converter above for instant results.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-q">What is 32 PSI in Bar?</h3>
+            <p class="faq-a">32 PSI is equal to 2.206 Bar. This is a common tire pressure for many standard passenger vehicles.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-q">What is the difference between PSI and Bar?</h3>
+            <p class="faq-a">PSI (Pounds per Square Inch) is the imperial pressure unit used primarily in the US and UK. Bar is the metric pressure unit used internationally. 1 Bar = 14.5038 PSI, and 1 PSI = 0.0689476 Bar.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-q">What is normal tire pressure in Bar?</h3>
+            <p class="faq-a">Normal passenger car tire pressure is typically 2.0 to 2.5 Bar (29 to 36 PSI). Always check the recommended pressure on your vehicle door jamb sticker or owner's manual.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-q">Is 2.5 Bar the same as 36 PSI?</h3>
+            <p class="faq-a">Very close. 2.5 Bar equals 36.26 PSI, so 2.5 Bar and 36 PSI are nearly identical and often used interchangeably for tire inflation purposes.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-q">How many PSI is 1 Bar?</h3>
+            <p class="faq-a">1 Bar is equal to 14.5038 PSI. To convert any Bar value to PSI, multiply by 14.5038.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 psibar.co — Free online PSI to Bar pressure converter</p>
+    <p style="margin-top:8px">
+        <a href="/bar-to-psi">Bar to PSI</a> ·
+        <a href="/kw-to-hp">kW to HP</a> ·
+        <a href="/kph-to-mph">KPH to MPH</a> ·
+        <a href="/nm-to-ft-lbs">Nm to ft-lbs</a>
+    </p>
+</footer>
+
+<button class="fab" id="fabBtn" title="Back to converter" aria-label="Scroll to converter">⇅</button>
+
+<script>
+    const PSI_TO_BAR = 0.0689476;
+    const BAR_TO_PSI = 14.5038;
+    let direction = 'psi-to-bar';
+
+    const psiInput = document.getElementById('psiInput');
+    const resultValue = document.getElementById('resultValue');
+    const formulaDisplay = document.getElementById('formulaDisplay');
+    const fromLabel = document.getElementById('fromLabel');
+    const toLabel = document.getElementById('toLabel');
+    const fromBadge = document.getElementById('fromBadge');
+    const copyBtn = document.getElementById('copyBtn');
+    const swapBtn = document.getElementById('swapBtn');
+
+    function convert(value) {
+        if (!value || isNaN(value)) return 0;
+        return direction === 'psi-to-bar' ? value * PSI_TO_BAR : value * BAR_TO_PSI;
+    }
+
+    function fmt(n) {
+        if (!n) return '0';
+        return n.toFixed(6).replace(/0+$/, '').replace(/\.$/, '');
+    }
+
+    function updateResult() {
+        const val = parseFloat(psiInput.value);
+        const result = convert(val);
+        const dv = val || 0;
+        const dr = fmt(result);
+        resultValue.textContent = dr;
+        if (direction === 'psi-to-bar') {
+            formulaDisplay.innerHTML = '<span>' + dv + '</span> PSI × 0.0689476 = <span>' + dr + '</span> Bar';
+        } else {
+            formulaDisplay.innerHTML = '<span>' + dv + '</span> Bar × 14.5038 = <span>' + dr + '</span> PSI';
+        }
+    }
+
+    psiInput.addEventListener('input', updateResult);
+
+    swapBtn.addEventListener('click', function() {
+        const cv = resultValue.textContent;
+        if (direction === 'psi-to-bar') {
+            direction = 'bar-to-psi';
+            fromLabel.textContent = 'Bar (Metric Pressure Unit)';
+            toLabel.textContent = 'PSI (Pounds per Square Inch)';
+            fromBadge.textContent = 'Bar';
+        } else {
+            direction = 'psi-to-bar';
+            fromLabel.textContent = 'PSI (Pounds per Square Inch)';
+            toLabel.textContent = 'Bar (Metric Pressure Unit)';
+            fromBadge.textContent = 'PSI';
+        }
+        psiInput.value = cv !== '0' ? cv : '';
+        updateResult();
+        psiInput.focus();
+    });
+
+    copyBtn.addEventListener('click', function() {
+        navigator.clipboard.writeText(resultValue.textContent).then(function() {
+            copyBtn.textContent = '✓ Copied';
+            copyBtn.classList.add('copied');
+            setTimeout(function() { copyBtn.textContent = '📋 Copy'; copyBtn.classList.remove('copied'); }, 2000);
+        });
+    });
+
+    // Quick values - covers all Ahrefs sub-keywords
+    var quickValues = [30, 32, 33, 35, 36, 38, 40, 42, 50, 100, 120, 125, 150, 200, 300, 500, 1000, 2000, 3000];
+    var quickGrid = document.getElementById('quickGrid');
+    quickValues.forEach(function(psi) {
+        var bar = (psi * PSI_TO_BAR).toFixed(3);
+        var item = document.createElement('div');
+        item.className = 'quick-item';
+        item.innerHTML = '<span class="quick-psi">' + psi + ' PSI</span><span class="quick-bar">' + bar + ' Bar</span>';
+        item.addEventListener('click', function() {
+            direction = 'psi-to-bar';
+            fromLabel.textContent = 'PSI (Pounds per Square Inch)';
+            toLabel.textContent = 'Bar (Metric Pressure Unit)';
+            fromBadge.textContent = 'PSI';
+            psiInput.value = psi;
+            updateResult();
+            document.getElementById('converter').scrollIntoView({ behavior: 'smooth' });
+        });
+        quickGrid.appendChild(item);
+    });
+
+    // Conversion table - two columns for compact display
+    var tableValues = [1,5,10,14.5,15,20,25,29,30,31,32,33,34,35,36,37,38,39,40,42,44,45,50,55,60,65,70,75,80,85,90,95,100,110,120,125,130,140,150,175,200,250,300,400,500,750,1000,1500,2000,3000];
+    var tableBody = document.getElementById('tableBody');
+    var half = Math.ceil(tableValues.length / 2);
+    for (var i = 0; i < half; i++) {
+        var row = document.createElement('tr');
+        var v1 = tableValues[i];
+        var b1 = (v1 * PSI_TO_BAR).toFixed(4);
+        var cells = '<td>' + v1 + ' PSI</td><td>' + b1 + '</td>';
+        if (i + half < tableValues.length) {
+            var v2 = tableValues[i + half];
+            var b2 = (v2 * PSI_TO_BAR).toFixed(4);
+            cells += '<td>' + v2 + ' PSI</td><td>' + b2 + '</td>';
+        } else {
+            cells += '<td></td><td></td>';
+        }
+        row.innerHTML = cells;
+        tableBody.appendChild(row);
+    }
+
+    // Floating action button - scroll back to converter
+    document.getElementById('fabBtn').addEventListener('click', function() {
+        document.getElementById('converter').scrollIntoView({ behavior: 'smooth' });
+        psiInput.focus();
+    });
+
+    window.addEventListener('load', function() { psiInput.focus(); });
+</script>
+
+</body>
+</html>

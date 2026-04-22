@@ -1,0 +1,19 @@
+# PSI to Bar Converter
+> A free online tool to convert PSI (Pounds per Square Inch) to Bar and Bar to PSI. Includes conversion chart, formula, tire pressure guide, and FAQ.
+
+## Features
+- Instant real-time conversion between PSI and Bar
+- One-click swap between PSI to Bar and Bar to PSI
+- Copy button for quick sharing
+- Comprehensive conversion chart (1 to 3000 PSI)
+- Common tire pressure values (30-42 PSI)
+- Conversion formula and explanation
+
+## Use Cases
+- Tire pressure conversion for cars and bicycles
+- HVAC and AC technician pressure readings
+- Scuba diving tank pressure conversion
+- Industrial and hydraulic system specifications
+
+## URL
+https://psibar.co/
